@@ -1,3 +1,11 @@
 #this-task {
   display: none;
 }
+
+.task-show {
+  display: none;
+}
+
+.task li{
+  text-decoration: none;
+}

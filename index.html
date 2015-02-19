@@ -10,47 +10,73 @@
   <body>
     <h2>To Do List!</h2>
     <div class="container">
-      <form id="to-do">
-        <div class= "form-group">
-          <label for="task">Task</label>
-          <input type="text" id="task" required>
-        </div>
-        <div class= "form-group">
-          <label for="due_date">Due Date</label>
-          <input type="text" id="due_date" required>
-        </div>
-        <div class= "form-group">
-          <label for="details">Details</label>
-          <input type="text" id="details" required>
-        </div>
-        <button type="submit" class="btn btn-warning">Submit Task</button>
-      </form>
 
-      <hr>
-
-      <div class ="rows">
+      <div class ="row">
         <div class = "col-md-6">
-
-          <h4>Tasks</h4>
-          <ul id ="tasks">
-
+          <h4>Lists</h4>
+          <ul id ="lists">
           </ul>
           <br>
-
-          <div id="this-task">
-            <h4></h4>
-            <p>Due_Date: <span class="Due_Date"></span></p>
-            <p>Details: <span class="Details"></span></p>
-          </div>
-
         </div>
+        <div class = "col-md-6">
+        <div class="task-show">
+          <h3><span class="this-list"></span></h3>
+            <h4>Tasks</h4>
+            <ul id ="tasks">
+            </ul>
+            <br>
+            <div id="this-task">
+              <h4></h4>
+              <p>Due_Date: <span class="Due_Date"></span></p>
+              <p>Details: <span class="Details"></span></p>
+            </div>
+        </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <form id="list">
+            <h3>Create a list</h3>
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+
+            <button type="submit" class="btn btn-warning">Create</button>
+          </form>
+        </div>
+
+        <div class="col-md-6">
+          <div class='task-show'>
+          <form id="to-do">
+            <div class= "form-group">
+              <h3> Add Task</h3>
+              <label for="task">Task</label>
+              <input type="text" id="task" required>
+            </div>
+            <div class= "form-group">
+              <label for="due_date">Due Date</label>
+              <input type="text" id="due_date" required>
+            </div>
+            <div class= "form-group">
+              <label for="details">Details</label>
+              <input type="text" id="details" required>
+            </div>
+            <button type="submit" class="btn btn-warning">Submit Task</button>
+          </form>
+        </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <hr>
         <div class = "col-md-6">
           <h4>Completed</h4>
           <ul id="completed">
-
           </ul>
         </div>
       </div>
+
     </div>
   </body>
 </html>
