@@ -38,6 +38,7 @@ $(document).ready(function() {
       var inputTask = $('input#task').val();
       var inputDueDate = $('input#due_date').val();
       var inputDetails = $('input#details').val();
+      var currentTask = null;
 
       var newToDo = {taskName: inputTask, dueDate: inputDueDate, details: inputDetails};
         currentList.tasks.push(newToDo); //currentlist
@@ -49,14 +50,20 @@ $(document).ready(function() {
       $('input#details').val("");
 
       $(".task").last().click(function() {
+        currentTask = newToDo;
         $("#this-task").show();
-        $("#this-task h4").text(currentList.newTodo.taskName);
-        $(".Due_Date").text(currentList.newTodo.dueDate);
-        $(".Details").text(currentList.newTodo.details);
+        $("#this-task h4").text(currentTask.taskName);
+        $(".Due_Date").text(currentTask.dueDate);
+        $(".Details").text(currentTask.details);
       });
 
-      $(".task").last().dblclick(function() {
+
+      $("ul#tasks .task").last().dblclick(function() {
+        console.log("click click")
         $(this).appendTo("ul#completed");
+        var toDelete = (currentList.tasks).indexOf(this);
+        currentList.tasks.splice(toDelete);
       });
+
     });
 });
